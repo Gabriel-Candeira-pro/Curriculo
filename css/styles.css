@@ -1,0 +1,79 @@
+
+:root {
+  --site-max-width: 1000px;
+  --surface-bg: #fff;
+  --text-color: #222;
+  --muted-color: #666;
+  --link-color: #0b66c3;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f8;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  max-width: var(--site-max-width);
+  margin: 24px auto;
+  padding: 16px;
+  background: var(--surface-bg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius: 8px;
+}
+
+/* Estados de carregamento / erro usados pelos fragments */
+.fragment-loading {
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  padding: 6px 0;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 600;
+}
+
+/* Links padrão do site (cores compartilhadas entre componentes) */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Tipografia utilitária */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: #111;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+/* Ajustes responsivos e helpers */
+.container-sm {
+  padding: 0 16px;
+}
+
+@media (max-width: 720px) {
+  main {
+    margin: 16px;
+    padding: 12px;
+  }
+}

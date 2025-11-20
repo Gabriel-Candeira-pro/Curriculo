@@ -1,0 +1,29 @@
+/* css/index.css
+   Orquestrador: importa estilos gerais e específicos de componentes.
+   Mantém a ordem: styles.css (globais) -> componentes (cabecalho, outros).
+*/
+
+/* Importar estilos gerais */
+@import url("styles.css");
+
+/* Importar estilo da grade do cabeçalho (local dentro da pasta cabecalho) */
+@import url("../cabecalho/css/grid.css");
+
+
+/* Regras de integração / ajustes rápidos (se necessário) */
+:root {
+  --site-max-width: 1000px;
+  --surface-bg: #fff;
+}
+
+/* exemplo de ajuste que pode complementar os imports */
+main {
+  max-width: var(--site-max-width);
+  margin: 24px auto;
+}
+
+/* fallback para casos em que grid.css precise ser sobrescrito */
+@media (max-width: 720px) {
+  /* garante consistência entre arquivos */
+  .cabecalho { padding: 14px; }
+}
