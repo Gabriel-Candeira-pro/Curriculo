@@ -1,0 +1,20 @@
+
+:root {
+  --site-surface-bg: #25262A;
+}
+
+/* Aplica o fundo em toda a página */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--site-surface-bg);
+}
+
+/* Garante que elementos que antes tinham fundo claro fiquem transparentes
+   para que o novo fundo seja visível; ajuste conforme necessário */
+main,
+main * {
+  background: transparent !important;
+  background-color: transparent !important;
+}

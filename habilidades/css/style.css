@@ -1,20 +1,16 @@
 /* habilidades/css/style.css
-   Estilos completos para o fragmento Habilidades
-   - Duas tabelas (Hard Skills e Soft Skills) com cabeçalho mesclado
-   - Bolinha à esquerda de cada célula do corpo na cor #007FAB
-   - Borda externa branca com cantos arredondados
-   - Responsividade: empilha visualmente em telas pequenas
+   Versão ajustada: textos em branco para contraste com fundo escuro
 */
 
 :root {
   --dot-color: #007FAB;
   --table-border: #ffffff;
-  --thead-bg-hard: linear-gradient(180deg,#f6f8fb,#ffffff);
-  --thead-bg-soft: linear-gradient(180deg,#fff7ef,#ffffff);
-  --cell-border: #f0f0f0;
-  --thead-text: #111;
-  --text-color: #333;
-  --muted-bg: #fafafa;
+  --thead-bg-hard: linear-gradient(180deg,#3a3b3f,#2d2e31);
+  --thead-bg-soft: linear-gradient(180deg,#3a3b3f,#2d2e31);
+  --cell-border: rgba(255,255,255,0.06);
+  --thead-text: #FFFFFF;
+  --text-color: #FFFFFF;
+  --muted-bg: rgba(255,255,255,0.04);
 }
 
 /* Container */
@@ -28,6 +24,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 12px 0;
+  color: var(--text-color);
 }
 
 /* Tabelas: layout e borda externa branca */
@@ -42,16 +39,17 @@
   overflow: hidden;
   background-clip: padding-box;
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  background: transparent;
 }
 
 /* Cabeçalho mesclado */
 .habilidades__table thead .col-header {
+  color: var(--thead-text);
   text-align: center;
   padding: 12px 14px;
   font-weight: 700;
-  color: var(--thead-text);
   background: var(--muted-bg);
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   font-size: 1rem;
 }
 
@@ -126,19 +124,22 @@
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid var(--cell-border);
+    color: var(--text-color);
   }
 
   .habilidades__table .col-left {
-    background: var(--muted-bg);
+    background: transparent;
     font-weight: 700;
     padding-top: 12px;
     padding-bottom: 8px;
+    color: var(--text-color);
   }
 
   .habilidades__table .col-right {
-    background: #fff;
+    background: transparent;
     padding-top: 8px;
     padding-bottom: 12px;
+    color: var(--text-color);
   }
 
   /* Em modo empilhado, mover bolinha para alinhar com o bloco de texto */
@@ -153,4 +154,15 @@
 .habilidades__table .col-right {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links dentro da tabela */
+.habilidades__table a {
+  color: #70A8FF;
+  text-decoration: none;
+}
+.habilidades__table a:hover,
+.habilidades__table a:focus {
+  text-decoration: underline;
+  outline: none;
 }

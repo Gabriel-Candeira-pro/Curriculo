@@ -1,37 +1,46 @@
+/* styles.css
+   Texto em branco para todo o site
+   Mantém variáveis para fácil ajuste futuro
+*/
 
 :root {
   --site-max-width: 1000px;
-  --surface-bg: #fff;
-  --text-color: #222;
-  --muted-color: #666;
-  --link-color: #0b66c3;
+  --surface-bg: #25262A;
+  --text-color: #FFFFFF;    /* texto principal em branco */
+  --muted-color: #E6E6E6;   /* texto secundário (tom levemente mais claro que branco) */
+  --link-color: #70A8FF;
+  --error-color: #FF6B6B;
+  --card-bg: transparent;
+  --shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
+
+/* Base */
 
 html, body {
   height: 100%;
-}
-
-body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f7f7f8;
+  background: var(--surface-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
 }
+
+/* Conteúdo principal */
 
 main {
   max-width: var(--site-max-width);
   margin: 24px auto;
   padding: 16px;
-  background: var(--surface-bg);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
   border-radius: 8px;
 }
 
-/* Estados de carregamento / erro usados pelos fragments */
+/* Estados de carregamento / erro */
+
 .fragment-loading {
   color: var(--muted-color);
   font-size: 0.95rem;
@@ -39,11 +48,12 @@ main {
 }
 
 .error {
-  color: #b00020;
+  color: var(--error-color);
   font-weight: 600;
 }
 
-/* Links padrão do site (cores compartilhadas entre componentes) */
+/* Links */
+
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -56,17 +66,29 @@ a:focus {
 }
 
 /* Tipografia utilitária */
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 8px 0;
   font-weight: 600;
-  color: #111;
+  color: var(--text-color);
 }
 
 p {
   margin: 0 0 12px 0;
+  color: #FFFFFF;
+  color: var(--text-color);
 }
 
-/* Ajustes responsivos e helpers */
+/* Form controls e elementos interativos */
+
+button, input, textarea, select {
+  color: var(--text-color);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Helpers e responsividade */
+
 .container-sm {
   padding: 0 16px;
 }
@@ -76,4 +98,24 @@ p {
     margin: 16px;
     padding: 12px;
   }
+}
+
+/* Ajustes para componentes específicos que podem usar cores próprias */
+/* Cabeçalho, links e tabelas garantem contraste com texto branco */
+
+.cabecalho__nome,
+.cabecalho__item {
+  color: var(--text-color);
+}
+
+.cabecalho__links a,
+.habilidades__table a {
+  color: var(--link-color);
+}
+
+.habilidades__table,
+table {
+  color: var(--text-color);
+  border-color: rgba(255,255,255,0.06);
+  background: transparent;
 }

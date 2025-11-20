@@ -8,6 +8,7 @@
 @import url("../descricao/css/style.css");
 @import url("../habilidades/css/style.css");
 
+@import url("tema.css");
 
 /* Regras de integração / ajustes rápidos (se necessário) */
 :root {

@@ -1,6 +1,12 @@
-objetivo__titulo {
-    text-align: justify;
-   font-size: 1.2rem;
-   font-weight: 600;
-   margin-bottom: 8px;
+.objetivo__titulo {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+
+.objetivo__texto{ 
+   color: #FFFFFF;
 }
