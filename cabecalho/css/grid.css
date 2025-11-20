@@ -43,6 +43,7 @@
 }
 
 .cabecalho__item {
+text-align: right;
   font-size: 0.95rem;
   color: #333;
   word-break: break-word;
