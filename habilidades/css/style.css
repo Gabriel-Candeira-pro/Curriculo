@@ -1,0 +1,156 @@
+/* habilidades/css/style.css
+   Estilos completos para o fragmento Habilidades
+   - Duas tabelas (Hard Skills e Soft Skills) com cabeçalho mesclado
+   - Bolinha à esquerda de cada célula do corpo na cor #007FAB
+   - Borda externa branca com cantos arredondados
+   - Responsividade: empilha visualmente em telas pequenas
+*/
+
+:root {
+  --dot-color: #007FAB;
+  --table-border: #ffffff;
+  --thead-bg-hard: linear-gradient(180deg,#f6f8fb,#ffffff);
+  --thead-bg-soft: linear-gradient(180deg,#fff7ef,#ffffff);
+  --cell-border: #f0f0f0;
+  --thead-text: #111;
+  --text-color: #333;
+  --muted-bg: #fafafa;
+}
+
+/* Container */
+.habilidades {
+  padding: 12px 0;
+  color: var(--text-color);
+}
+
+/* Título */
+.habilidades__titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+/* Tabelas: layout e borda externa branca */
+.habilidades__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 18px;
+  table-layout: fixed;
+  border: 2px solid var(--table-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-clip: padding-box;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Cabeçalho mesclado */
+.habilidades__table thead .col-header {
+  text-align: center;
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--thead-text);
+  background: var(--muted-bg);
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1rem;
+}
+
+/* Diferenciação visual por tabela */
+.habilidades__table--hard thead .col-header { background: var(--thead-bg-hard); }
+.habilidades__table--soft thead .col-header { background: var(--thead-bg-soft); }
+
+/* Células do corpo */
+.habilidades__table tbody td {
+  vertical-align: top;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--cell-border);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  position: relative;
+  background: transparent;
+  word-break: break-word;
+}
+
+/* Colunas: esquerda mais estreita, direita mais larga */
+.habilidades__table .col-left { width: 38%; padding-right: 16px; }
+.habilidades__table .col-right { width: 62%; padding-left: 16px; }
+
+/* Bolinha ao lado do conteúdo das células do corpo */
+.habilidades__table tbody td::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--dot-color);
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  flex: 0 0 8px;
+}
+
+/* Não mostrar bolinha quando o primeiro elemento dentro da célula é bloco (ex: strong em bloco) */
+.habilidades__table tbody td > strong,
+.habilidades__table tbody td > p {
+  display: block;
+}
+.habilidades__table tbody td > strong::before,
+.habilidades__table tbody td > p::before {
+  content: none;
+}
+
+/* Ajustes visuais para evitar bolinha duplicada em conteúdo com quebras */
+.habilidades__table tbody td br + strong::before { content: none; }
+
+/* Última linha: remover borda inferior */
+.habilidades__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsividade: transformar a tabela em blocos empilhados */
+@media (max-width: 720px) {
+  .habilidades__table thead { display: none; }
+
+  .habilidades__table tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .habilidades__table tbody td {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid var(--cell-border);
+  }
+
+  .habilidades__table .col-left {
+    background: var(--muted-bg);
+    font-weight: 700;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .habilidades__table .col-right {
+    background: #fff;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+  /* Em modo empilhado, mover bolinha para alinhar com o bloco de texto */
+  .habilidades__table tbody td::before {
+    margin-right: 8px;
+    vertical-align: text-top;
+  }
+}
+
+/* Pequenos refinamentos de acessibilidade e contraste */
+.habilidades__table .col-left,
+.habilidades__table .col-right {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

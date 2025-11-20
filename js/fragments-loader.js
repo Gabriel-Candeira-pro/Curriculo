@@ -1,6 +1,7 @@
 // Estrutura de fragments: id do container -> caminho relativo do arquivo
 const FRAGMENTS = {
   cabecalho: 'cabecalho/cabecalho.html',
+  descricao: 'descricao/descricao.html',
   habilidades: 'habilidades/habilidades.html',
   experiencia: 'experiencia/experiencia.html',
   atividades: 'atividades/atividades.html'

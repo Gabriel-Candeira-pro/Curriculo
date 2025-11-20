@@ -1,13 +1,12 @@
-/* css/index.css
-   Orquestrador: importa estilos gerais e específicos de componentes.
-   Mantém a ordem: styles.css (globais) -> componentes (cabecalho, outros).
-*/
+
 
 /* Importar estilos gerais */
 @import url("styles.css");
 
-/* Importar estilo da grade do cabeçalho (local dentro da pasta cabecalho) */
+/* Importar estilo da grade do cabeçalho*/
 @import url("../cabecalho/css/grid.css");
+@import url("../descricao/css/style.css");
+@import url("../habilidades/css/style.css");
 
 
 /* Regras de integração / ajustes rápidos (se necessário) */
