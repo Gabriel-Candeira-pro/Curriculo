@@ -1,10 +1,12 @@
 // Estrutura de fragments: id do container -> caminho relativo do arquivo
 const FRAGMENTS = {
-  cabecalho: 'cabecalho/cabecalho.html',
-  descricao: 'descricao/descricao.html',
-  habilidades: 'habilidades/habilidades.html',
-  experiencia: 'experiencia/experiencia.html',
-  atividades: 'atividades/atividades.html'
+  "side-nav-placeholder": "side-nav/side-nav.html",
+  cabecalho: "cabecalho/cabecalho.html",
+  descricao: "descricao/descricao.html",
+  habilidades: "habilidades/habilidades.html",
+  experiencia: "experiencia/experiencia.html",
+  educacao: "educacao/educacao.html",
+  atividades: "atividades/atividades.html",
 };
 
 async function fetchHtml(url) {

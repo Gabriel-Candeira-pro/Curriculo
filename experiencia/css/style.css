@@ -119,3 +119,21 @@
   .experiencia__descricao { font-size: 0.94rem; }
   .experiencia__projeto { gap: 6px; }
 }
+
+/* Linha sutil entre itens das seções Experiência e Educação */
+.experiencia hr,
+.educacao hr {
+  border: 0;                             /* remove borda padrão */
+  height: 1px;                           /* espessura fina */
+  background: rgb(153, 152, 152);    /* tom branco muito suave */
+  margin: 12px 0;                        /* espaçamento vertical */
+  border-radius: 1px;                    /* canto levemente arredondado */
+}
+
+/* Variante ainda mais discreta */
+.experiencia hr.sutil,
+.educacao hr.sutil {
+  background: rgba(255,255,255,0.04);
+  height: 0.8px;
+  margin: 10px 0;
+}
