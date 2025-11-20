@@ -18,3 +18,37 @@ main * {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+/* Delimitação fina entre seções: descrição e habilidades */
+.objetivo,
+.habilidades {
+  position: relative;
+  padding-bottom: 18px; /* espaço antes da linha */
+  margin-bottom: 18px;  /* distância para a próxima seção */
+}
+
+/* a linha fina que aparece abaixo das seções */
+.objetivo::after,
+.habilidades::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,0.08); /* linha sutil sobre fundo escuro */
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 1px;
+}
+
+/* Em telas pequenas reduzir espaçamentos */
+@media (max-width: 720px) {
+  .objetivo,
+  .habilidades {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .objetivo::after,
+  .habilidades::after {
+    margin-top: 10px;
+  }
+}
+

@@ -1,0 +1,59 @@
+/* >>> Estilos para .bloco_projeto conforme a imagem */
+.bloco_projeto {
+  margin-top: 10px;
+  margin-left: 255px;
+  padding: 7px;
+  border-left: 3px solid rgba(112,168,255,0.12);
+  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+}
+
+/* Linha do projeto: natureza e subtítulo na mesma linha, com gap pequeno */
+.experiencia__projeto {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 8px 0;
+  font-size: 0.98rem;
+}
+
+/* Rótulo [projeto]/ — compacto, alto contraste e sem largura fixa */
+.experiencia__natureza_projeto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(112,168,255,0.06);
+  color: #39ceff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Subtítulo do projeto (texto em negrito na mesma linha) */
+.experiencia__subtitulo_projeto {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+/* Descrição do projeto: tom secundário, texto justificado e espaçamento confortável */
+.experiencia__descricao_projeto {
+  margin: 6px 0 0 0;
+  color: #cdcdcd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Responsividade: manter legibilidade em telas pequenas */
+@media (max-width: 720px) {
+  .bloco_projeto { padding: 10px; }
+  .experiencia__projeto { gap: 6px; font-size: 0.95rem; }
+  .experiencia__natureza_projeto { padding: 2px 6px; font-size: 0.85rem; }
+  .experiencia__subtitulo_projeto { font-size: 0.95rem; }
+  .experiencia__descricao_projeto { font-size: 0.94rem; }
+}

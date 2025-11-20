@@ -1,0 +1,121 @@
+/* Experiência — estilos completos e sem espaço entre natureza e cargo */
+
+/* Título da seção (já existente) */
+.experiencia__titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* Item individual de experiência */
+.experiencia__item {
+  margin-bottom: 18px;
+  padding: 6px 0;
+}
+
+/* Metadados (data) */
+.experiencia__meta {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+/* Data do registro */
+.experiencia__data {
+  font-weight: 600;
+  color: #cdcdcd;
+  background: rgba(112, 168, 255, 0.06);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Header que alinha natureza e cargo sem espaço entre eles */
+.experiencia__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;               /* sem espaço entre natureza e cargo */
+}
+
+/* Natureza (label) — largura fixa para manter à esquerda */
+.experiencia__natureza {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(112, 168, 255, 0.04);
+  color: #39ceff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  margin: 0;            /* remove margem que causaria espaço */
+}
+
+/* Cargo ocupa o restante do espaço; sem padding-left para não criar espaço */
+.experiencia__cargo {
+  flex: 1 1 auto;
+  margin: 0;
+  padding-left: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 2;
+}
+
+/* Subtítulo de projeto/tecnologias */
+.experiencia__subtitulo {
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Texto descritivo detalhado */
+.experiencia__descricao {
+  color: #cdcdcd;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* Linha de projeto / tecnologias (subtítulo) */
+.experiencia__projeto {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* Natureza dentro de .experiencia__projeto não usa largura fixa */
+.experiencia__projeto .experiencia__natureza {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 2px 6px;
+  background: rgba(112, 168, 255, 0.03);
+}
+
+/* Pequenos refinamentos acessíveis */
+.experiencia__natureza,
+.experiencia__data {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 720px) {
+  .experiencia__meta { gap: 8px; }
+  .experiencia__data { font-size: 0.9rem; padding: 3px 6px; }
+  .experiencia__natureza { flex: 0 0 92px; font-size: 0.9rem; padding: 3px 6px; }
+  .experiencia__cargo { font-size: 0.98rem; }
+  .experiencia__descricao { font-size: 0.94rem; }
+  .experiencia__projeto { gap: 6px; }
+}

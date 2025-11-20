@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Site montado por fragmentos</title>
+  <title>Currículo Gabriel Candeira Silva</title>
 
-  <!-- Orquestrador de estilos: css/index.css deve importar css/styles.css e cabecalho/css/grid.css -->
+  
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <main id="app" aria-live="polite">
     <div id="cabecalho" class="fragment-loading" role="status">Carregando cabeçalho...</div>
+    <div id="descricao" class="fragment-loading" role="status">Carregando descrição...</div>
     <div id="habilidades" class="fragment-loading" role="status">Carregando habilidades...</div>
     <div id="experiencia" class="fragment-loading" role="status">Carregando experiência...</div>
     <div id="atividades" class="fragment-loading" role="status">Carregando atividades...</div>
   </main>
 
-  <!-- Loader de fragments (módulo ES) -->
+ 
   <script type="module" defer src="js/fragments-loader.js"></script>
 
   <noscript>
