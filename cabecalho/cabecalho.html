@@ -1,47 +1,71 @@
 <section aria-label="Cabeçalho do currículo" class="cabecalho">
-
   <div class="cabecalho__col-a" id="col-a">
-
-    <!-- A1: imagem (caminho correto relativo à raiz do projeto) -->
     <img class="cabecalho__foto" src="cabecalho/imagem/perfil.png" alt="Foto de Gabriel Candeira Silva">
-
-    <!-- A2: nome -->
     <div class="cabecalho__nome" id="nome">Gabriel Candeira Silva</div>
-
   </div>
 
   <div class="cabecalho__col-b" id="col-b" aria-label="Informações de contato">
-
-    <!-- B1: Endereço -->
     <div class="cabecalho__item" id="endereco">
       <strong>Endereço:</strong> Av. Dep. Pinheiro Machado, N°. 3420, Kitnet 17, Parnaíba - PI, 64212-293
     </div>
 
-    <!-- B2: Telefone -->
     <div class="cabecalho__item" id="telefone">
       <strong>Telefone:</strong> <a href="tel:+5598981871728">(98) 98187-1728</a>
     </div>
 
-    <!-- B3: E-mail -->
     <div class="cabecalho__item" id="email">
       <strong>E-mail:</strong> <a href="mailto:gabriel.candeira.pro@gmail.com">gabriel.candeira.pro@gmail.com</a>
     </div>
 
-    <!-- B4: Linkedin -->
     <div class="cabecalho__item cabecalho__links" id="linkedin">
       <a href="https://www.linkedin.com/in/gabriel-candeira-7904621b6" target="_blank" rel="noopener"><strong>Linkedin</strong></a>
     </div>
 
-    <!-- B5: Github -->
     <div class="cabecalho__item cabecalho__links" id="github">
       <a href="https://github.com/Gabriel-Candeira-pro" target="_blank" rel="noopener"><strong>Github</strong></a>
     </div>
 
-    <!-- B6: Observação sobre o currículo -->
     <div class="cabecalho__item" id="obs">
-        <a href="https://docs.google.com/document/d/1Cr4dmM7kZu2mzJpwatx5yTzjjniq9KZE/edit#heading=h.xq9gb0bd75hj" target="_blank" rel="noopener"><strong>Este currículo atualizado em docs</strong></a>
+      <a href="https://docs.google.com/document/d/1Cr4dmM7kZu2mzJpwatx5yTzjjniq9KZE/edit#heading=h.xq9gb0bd75hj" target="_blank" rel="noopener"><strong>Este currículo atualizado em docs</strong></a>
     </div>
 
+    <div class="cabecalho__item">
+      <button id="contateMeBtn" class="contate-me" type="button" aria-haspopup="dialog" aria-controls="contatoModal">
+        Contate-me
+      </button>
+    </div>
   </div>
 
+  <!-- Modal -->
+  <div id="contatoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true" hidden>
+    <div class="modal__overlay" data-modal-overlay>
+      <div class="modal__panel" role="document">
+        <header class="modal__header">
+          <h2 id="modalTitle">Formulário de contato</h2>
+          <button id="modalClose" class="modal__close" aria-label="Fechar diálogo" type="button">&times;</button>
+        </header>
+
+        <main class="modal__body">
+          <iframe
+            id="contactFormFrame"
+            src="about:blank"
+            data-src="https://docs.google.com/forms/d/e/1FAIpQLSeICOV2tCKYaWJolFHgjjR3fq8KQ6GjGmPVeBKl_pkIkpdTsA/viewform?embedded=true"
+            title="Formulário"
+            width="100%"
+            height="480"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            loading="lazy">Carregando…</iframe>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estilos e script externos (relativos à pasta do fragmento) -->
+  <link rel="stylesheet" href="cabecalho/css/grid.css">
+  <link rel="stylesheet" href="cabecalho/css/modal.css">
+
+  <script type="module" src="cabecalho/js/modal.js" defer></script>
+  <!-- Em produção pode usar a versão minificada: cabecalho/js/modal.min.js -->
 </section>

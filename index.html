@@ -25,13 +25,18 @@
   </main>
 
   <script type="module" defer src="js/fragments-loader.js"></script>
+  <script type="module" src="cabecalho/js/modal.js" defer></script>.
+  
 
+  <!-- Inicialização do side-nav modular após os fragments serem carregados.
+       Usa um pequeno atraso para garantir que o fragmento side-nav (side-nav/side-nav.html)
+       já tenha sido injetado pelo fragments-loader. -->
   <script type="module">
     import { initSideNav } from './js/side-nav.js';
 
-    
+    // Chama initSideNav depois que a página e os fragments tiverem sido processados
     window.addEventListener('load', () => {
-      
+      // pequeno atraso para garantir injeção dos fragments dinâmicos
       setTimeout(() => {
         try { initSideNav(); } catch (e) { /* falha silenciosa */ }
       }, 120);

@@ -1,0 +1,182 @@
+/* modal.css
+   Versão completa do modal com fundo #25262A, animação suave de abertura/fechamento,
+   foco aprisionado, responsividade e contraste para texto e controles. */
+
+/* Container do modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  font-family: inherit;
+}
+
+/* Quando oculto via aria-hidden ou hidden */
+.modal[aria-hidden="true"],
+.modal[hidden] {
+  display: none;
+}
+
+/* Overlay: escurece o fundo da página */
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 260ms cubic-bezier(.2,.9,.2,1);
+  pointer-events: none;
+}
+
+/* Painel do modal (document) com fundo solicitado */
+.modal__panel {
+  background: #25262A;
+  color: #FFFFFF;
+  width: min(900px, 96%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transform: translateY(-10px) scale(0.98);
+  opacity: 0;
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease-out;
+  will-change: transform, opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cabeçalho do modal */
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Título do modal */
+.modal__header h2,
+#modalTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+/* Botão fechar */
+.modal__close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 6px;
+  border-radius: 6px;
+}
+.modal__close:focus,
+.modal__close:hover {
+  outline: none;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 0 4px rgba(112,168,255,0.08);
+}
+
+/* Corpo do modal */
+.modal__body {
+  padding: 1rem;
+  color: #E6E6E6;
+  font-size: 0.98rem;
+}
+
+/* Iframe: ocupa largura total; mantém fundo transparente quando possível */
+.modal__body iframe {
+  width: 100%;
+  height: 480px;
+  border: 0;
+  background: transparent;
+  display: block;
+}
+
+/* Botão contate-me (aplica estilo compatível com fundo escuro) */
+.contate-me {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.contate-me:focus,
+.contate-me:hover {
+  outline: none;
+  background: rgba(112, 168, 255, 0.06);
+  color: #70A8FF;
+  box-shadow: 0 6px 18px rgba(112,168,255,0.08);
+}
+
+/* Quando o modal está "aberto": tornar overlay e painel visíveis e clicáveis */
+.modal.open .modal__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal.open .modal__panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Estado de fechamento animado (suaviza a saída) */
+.modal.closing .modal__panel {
+  transform: translateY(-6px) scale(0.995);
+  opacity: 0;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+/* Prevenir scroll do body quando modal aberto */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsividade: ajustar dimensões e paddings */
+@media (max-width: 720px) {
+  .modal__panel {
+    width: calc(100% - 24px);
+    max-height: 92vh;
+    border-radius: 8px;
+  }
+
+  .modal__body {
+    padding: 0.75rem;
+  }
+
+  .modal__body iframe {
+    height: 360px;
+  }
+
+  .modal__header {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Acessibilidade e contrastes para controles internos */
+.modal__panel a,
+.modal__panel button,
+.modal__panel input,
+.modal__panel textarea,
+.modal__panel select {
+  color: inherit;
+}
+
+/* Mensagens de erro dentro do modal */
+.modal__panel .error {
+  color: #FF6B6B;
+  font-weight: 600;
+}
