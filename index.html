@@ -5,29 +5,48 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Currículo Gabriel Candeira Silva</title>
 
-  
+  <!-- Estilos principais -->
   <link rel="stylesheet" href="css/index.css">
+  <!-- Estilo modular do painel lateral -->
+  <link rel="stylesheet" href="side-nav/css/side-nav.css">
 </head>
+
 <body>
+  <!-- Placeholder do painel lateral (será carregado como fragmento) -->
+  <div id="side-nav-placeholder" class="fragment-loading" role="status">Carregando navegação...</div>
+
   <main id="app" aria-live="polite">
     <div id="cabecalho" class="fragment-loading" role="status">Carregando cabeçalho...</div>
     <div id="descricao" class="fragment-loading" role="status">Carregando descrição...</div>
     <div id="habilidades" class="fragment-loading" role="status">Carregando habilidades...</div>
     <div id="experiencia" class="fragment-loading" role="status">Carregando experiência...</div>
+    <div id="educacao" class="fragment-loading" role="status">Carregando educação...</div>
     <div id="atividades" class="fragment-loading" role="status">Carregando atividades...</div>
   </main>
 
- 
   <script type="module" defer src="js/fragments-loader.js"></script>
+
+  <script type="module">
+    import { initSideNav } from './js/side-nav.js';
+
+    
+    window.addEventListener('load', () => {
+      
+      setTimeout(() => {
+        try { initSideNav(); } catch (e) { /* falha silenciosa */ }
+      }, 120);
+    });
+  </script>
 
   <noscript>
     <style>
       #app { padding: 20px; }
       .fragment-loading { color: #b00020; }
     </style>
+
     <div style="max-width:1000px;margin:24px auto;background:#fff;padding:16px;border-radius:8px;">
       <p class="error">JavaScript está desativado. O conteúdo do site exige suporte a JavaScript para carregar os fragmentos.</p>
-      <p>Arquivos de fragmentos disponíveis na pasta do projeto: cabecalho/, habilidades/, experiencia/, atividades/.</p>
+      <p>Arquivos de fragmentos disponíveis na pasta do projeto: cabecalho/, habilidades/, experiencia/, atividades/, side-nav/.</p>
     </div>
   </noscript>
 </body>
