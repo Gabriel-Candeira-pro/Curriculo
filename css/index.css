@@ -10,6 +10,7 @@
 @import url("../experiencia/css/index_experiencia.css");
 
 @import url("tema.css");
+@import url("overrides.css");
 
 /* Regras de integração / ajustes rápidos (se necessário) */
 :root {

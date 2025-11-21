@@ -1,0 +1,100 @@
+/* reset útil para evitar estouro por padding/border */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* imagens e iframes 100% responsivos */
+img, .cabecalho__foto, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* evita overflow horizontal geral */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ajustes específicos para mobile (substitui regras problemáticas) */
+@media (max-width: 720px) {
+
+  /* Header: manter uma foto menor e nome alinhado */
+  .cabecalho {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .cabecalho__foto {
+    height: 160px; /* menor que 220 para evitar cortar */
+    object-fit: cover;
+  }
+
+  /* Evitar itens com alinhamento à direita que causem quebra */
+  .cabecalho__col-b {
+    display: block;
+  }
+  .cabecalho__item {
+    text-align: left;
+    word-break: break-word;
+    margin-bottom: 6px;
+  }
+
+  /* Bloco de projeto: remover margin-left fixa que causa overflow */
+  .bloco_projeto {
+    margin-left: 0; /* remove deslocamento lateral */
+    margin-top: 10px;
+    padding: 10px;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: rgba(112,168,255,0.12);
+  }
+
+  /* Experiência: header flex acomodando labels */
+  .experiencia__header {
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .experiencia__natureza {
+    flex: 0 0 auto;
+    min-width: 72px;
+    font-size: 0.95rem;
+    padding: 4px 6px;
+  }
+  .experiencia__cargo {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  /* Tabelas de habilidades: já tem rules, reforçar comportamento fluido */
+  .habilidades__table,
+  .habilidades__table tbody,
+  .habilidades__table tbody tr {
+    width: 100%;
+    display: block;
+    box-shadow: none;
+    border: none;
+  }
+  .habilidades__table tbody td {
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+  }
+
+  /* Evitar que texto muito longo quebre layout */
+  .cabecalho__item,
+  .experiencia__descricao,
+  .experiencia__subtitulo_projeto,
+  .objetivo__texto {
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* reduzir margens laterais do main para aproveitar a tela */
+  main {
+    margin: 12px;
+    padding: 12px;
+  }
+
+}
